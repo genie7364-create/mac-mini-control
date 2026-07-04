@@ -29,6 +29,7 @@ ssh username@ip-address
 ##Test command
 
 ```bash
+caffeinate -u -t 2
 open -a safari
 ```
 
