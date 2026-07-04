@@ -18,7 +18,7 @@ whoami
 ## Check IP address:
 
 ```bash
-ipconfig getifaddr en0
+ipconfig getifaddr en1
 ```
 ## SSH format
 
