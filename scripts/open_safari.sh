@@ -1,5 +1,5 @@
 #!/bin/bash
+target_url="$1"
+open -a safari "$target_url"
 
-caffeinate -u -t 5
-open -a Safari
-open "https://www.youtube.com"
+
