@@ -5,10 +5,10 @@ set -euo pipefail
 script_dir="$(cd "$(dirname "$0")" && pwd)"
 # Run the open_safari.sh script 
 echo "starting morning automation..."
-# bash executes the open_safari.sh script located in the same directory as this script. The "$script_dir" variable ensures that we are calling the correct script regardless of the current working directory.
-"$script_dir/open_safari.sh"
-echo "morning automation complete.
-
+# set the target URL to the first argument passed to the script, or use a default URL if no argument is provided. The "${1:-default_value}" syntax means "use the first argument if it exists; otherwise, use 'default_value'".
+target_url="${1:-https://missav123.com/dm265/en}"
+"$script_dir/open_safari.sh" "$target_url"
+echo "morning automation complete."
 
 
 
