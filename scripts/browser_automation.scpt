@@ -11,7 +11,7 @@ on run argv
     set current_url to (url of currenttab) as text
     display dialog current_url
 
-    do javascript "document.title" in currenttab
+    
     set pagetitle to do javascript "document.title" in currenttab
     display dialog pagetitle
 
