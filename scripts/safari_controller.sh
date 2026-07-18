@@ -6,7 +6,7 @@ script_dir="$(cd "$(dirname "$0")" && pwd)"
 # Run the open_safari.sh script 
 echo "starting morning automation..."
 # set the target URL to the first argument passed to the script, or use a default URL if no argument is provided. The "${1:-default_value}" syntax means "use the first argument if it exists; otherwise, use 'default_value'".
-target_url="${1:-https://missav123.com/dm298/en/today-hot}"
+target_url="${1:-https://missav123.com/dm265/en}"
 "$script_dir/open_safari.sh" "$target_url"
 
 # Get the genre from the second argument passed to the script, or use a default genre if no argument is provided. The "${2:-default_value}" syntax means "use the second argument if it exists; otherwise, use 'default_value'".
