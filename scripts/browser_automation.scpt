@@ -14,6 +14,7 @@ on run argv
    set jsCode to jsCode & "const searchButton = document.querySelector('.ytSearchboxComponentSearchButton');"
    set jsCode to jsCode & "searchInput.focus();"
    set jsCode to jsCode & "searchInput.value = '" & searchquery & "';"
+   set jsCode to jsCode & "searchButton.click();"
    do JavaScript jsCode in currenttab
    
 end tell
