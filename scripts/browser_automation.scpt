@@ -20,7 +20,11 @@ on run argv
    set searchresult to "const firstresult = document.querySelector('ytd-video-renderer a#video-title');"
    set searchresult to searchresult & "firstresult.click();"
    do JavaScript searchresult in currenttab
-
+   delay 3
+   set fullscreencode to "const fullscreenbutton = document.querySelector('.ytp-fullscreen-button');"
+   set fullscreencode to fullscreencode & "fullscreenbutton.click();"
+   do JavaScript fullscreencode in currenttab
+   
 end tell
 
 end run
