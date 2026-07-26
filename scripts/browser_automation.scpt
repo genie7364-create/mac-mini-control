@@ -5,7 +5,7 @@ on run argv
 
     tell application "safari"
     activate
-    delay 5 
+    delay 3
     set currenttab to current tab of front window
 
     set current_url to (url of currenttab) as text
@@ -16,7 +16,11 @@ on run argv
    set jsCode to jsCode & "searchInput.value = '" & searchquery & "';"
    set jsCode to jsCode & "searchButton.click();"
    do JavaScript jsCode in currenttab
-   
+   delay 3
+   set searchresult to "const firstresult = document.querySelector('ytd-video-renderer a#video-title');"
+   set searchresult to searchresult & "firstresult.click();"
+   do JavaScript searchresult in currenttab
+
 end tell
 
 end run
