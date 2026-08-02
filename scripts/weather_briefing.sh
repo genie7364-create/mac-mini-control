@@ -10,7 +10,11 @@ base_url="https://api.open-meteo.com/v1/forecast"
 query="latitude=$latitude"
 query="$query&longitude=$longitude"
 query="$query&current=temperature_2m"
+query="$query,relative_humidity_2m"
+query="$query,precipitation"
 query="$query&timezone=auto"
+
+
 echo "$query"
 
 url="$base_url?$query"
@@ -28,11 +32,21 @@ echo "$time"
 
 formatted_time="$(date -j -f "%Y-%m-%dT%H:%M" "$time" "+%B %d, %I:%M %p")"
 
+humidity="$(echo "$response" | jq ' .current.relative_humidity_2m')"
+echo "current humidity: ${humidity}%"
+
+precipitation="$(echo "$response" | jq ' .current.precipitation')"
+echo "current precipitation: ${precipitation}mm"
+
 message="Good morning.
 
 Current temperature is ${temperature} degrees Celsius.
 
-Current time is ${formatted_time}."
+Current time is ${formatted_time}.
+
+Current humidity is ${humidity} percent.
+
+Current precipitation is ${precipitation} millimeters."
 
 echo "$message"
 
